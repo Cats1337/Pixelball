@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "pixelball",
+  "version": "${version}",
+
+  "name": "Pixelball",
+  "description": "Disallow crafting of an item",
+  "authors": ["Cats1337"],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pixelball/icon.png",
+
+  "environment": "server",
+  "entrypoints": {
+    "fabric-datagen": ["io.github.cats1337.pixelball.client.PixelballDataGenerator"],
+    "main": ["io.github.cats1337.pixelball.Pixelball"]
+  },
+
+  "mixins": [
+    "pixelball.mixins.json"
+    ,{
+      "config": "pixelball.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

@@ -1,0 +1,28 @@
+# Gradle
+.gradle/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Build outputs
+build/
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependency caches
+*.jar
+*.war
+*.ear
+
+# VS Code (if used)
+.vscode/
+
+# Misc
+*.class
