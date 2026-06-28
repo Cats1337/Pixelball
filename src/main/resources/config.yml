@@ -1,0 +1,109 @@
+tiltify:
+  client-id: ""
+  client-secret: ""
+  campaign-id: ""
+  donation-url: ""
+
+donation:
+  total-raised: 0
+  total-override: 0
+
+bossbar:
+  title-color: "&3"
+  # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+  color: BLUE
+  # PROGRESS, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20
+  style: PROGRESS
+  update-interval-seconds: 30
+
+goal:
+  message: "Goal Reached!"
+  title-color: "&f"
+  color: BLUE
+
+dimensions:
+  nether: false
+  end: false
+
+# Someone donating $xx value
+donations:
+  5:
+    action: random_pokeball 1
+    title: Random Pokeball
+  10:
+    action: random_stone 1
+    title: Random Pokemon Stone
+  25:
+    action: random_held_item 1
+    title: Random Held Item
+  50:
+    action: spawnpokemon shiny random
+    title: Random Shiny
+
+# Upon reaching total donation value (or goals)
+goals:
+  250:
+    action: enable_nether
+    title: Enable Nether
+    reached: false
+  500:
+    action: legendaryspawn 3
+    title: Random Legendaries
+    reached: false
+  1000:
+    action: enable_end
+    title: Enable End
+    reached: false
+
+# Repeat when total donation value reaches a certain amount
+repeat:
+  100:
+    action: spawnpokemon shiny random
+    title: Random Shiny
+    last_reached: 0
+  250:
+    action: legendaryspawn 3
+    title: Random Legendary
+    last_reached: 0
+
+# List of possible stones
+stones: [
+  fire_stone, water_stone, thunder_stone, leaf_stone, moon_stone, sun_stone,
+  shiny_stone, dusk_stone, dawn_stone, ice_stone, oval_stone
+]
+
+# List of possible held items
+held-items: [
+  ability_shield, absorb_bulb, air_balloon, assault_vest, big_root, binding_band,
+  black_sludge, blunder_policy, bright_powder, black_belt, black_glasses, cell_battery,
+  choice_band, choice_scarf, choice_specs, cleanse_tag, covert_cloak, charcoal_stick,
+  damp_rock, deep_sea_scale, deep_sea_tooth, destiny_knot, dragon_fang, eject_button,
+  eject_pack, everstone, eviolite, expert_belt, exp_share, flame_orb, float_stone,
+  focus_band, focus_sash, fairy_feather, heat_rock, hard_stone, icy_rock, iron_ball,
+  kings_rock, leftovers, life_orb, light_ball, wise_glasses, zoom_lens
+]
+
+# List of possible pokeballs
+pokeballs: [
+  poke_ball, citrine_ball, verdant_ball, azure_ball, roseate_ball, slate_ball,
+  premier_ball, great_ball, ultra_ball, safari_ball, fast_ball, level_ball, lure_ball,
+  heavy_ball, love_ball, friend_ball, moon_ball, sport_ball, park_ball, net_ball, dive_ball,
+  nest_ball, repeat_ball, timer_ball, luxury_ball, dusk_ball, heal_ball, quick_ball, dream_ball,
+  beast_ball, cherish_ball, ancient_poke_ball, ancient_citrine_ball, ancient_verdant_ball,
+  ancient_roseate_ball, ancient_slate_ball, ancient_ivory_ball, ancient_great_ball,
+  ancient_ultra_ball, ancient_feather_ball, ancient_wing_ball, ancient_jet_ball,
+  ancient_heavy_ball, ancient_leaden_ball, ancient_gigaton_ball
+]
+
+# List of possible legendaries
+legendaries:
+  ogerpon: 70
+  xerneas: 70
+  latias: 65
+  latios: 65
+  articuno: 55
+  zapdos: 55
+  moltres: 55
+  mewtwo: 70
+  lugia: 70
+  ho-oh: 70

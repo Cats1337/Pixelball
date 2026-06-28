@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Pixelball",
-  "description": "Disallow crafting of an item",
+  "description": "Connects a Tiltify campaign to in-game donation rewards, goals, and a server bossbar.",
   "authors": ["Cats1337"],
   "contact": {},
 
@@ -19,15 +19,13 @@
 
   "mixins": [
     "pixelball.mixins.json"
-    ,{
-      "config": "pixelball.client.mixins.json",
-      "environment": "client"
-    }
   ],
 
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version}",
+    "fabric-permissions-api-v0": "*",
+    "placeholder-api": "*"
   }
 }

@@ -4,6 +4,7 @@
   "package": "io.github.cats1337.pixelball.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ServerPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
