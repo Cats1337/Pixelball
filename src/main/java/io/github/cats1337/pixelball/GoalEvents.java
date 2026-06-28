@@ -96,17 +96,22 @@ public class GoalEvents {
         PixelballConfig.setGoalReached(amount, true);
     }
 
-    private void checkRepeatGoal(MinecraftServer server, double key, PixelballConfig.GoalData goal, double totalRaised) {
-        int interval = (int) -key;
-        double lastReached = goal.getLastReached();
+private void checkRepeatGoal(MinecraftServer server, double key, PixelballConfig.GoalData goal, double totalRaised) {
+    int interval = (int) -key;
+    double lastReached = goal.getLastReached();
+    double nextThreshold = lastReached + interval;
 
-        while (totalRaised >= lastReached + interval) {
-            lastReached += interval;
-            broadcast(server, "§6Repeatable goal of §e$" + format(lastReached) + " §6reached! Executing Action: §a" + goal.getTitle());
-            runAction(server, goal.getAction());
-            PixelballConfig.setRepeatGoalLastReached(interval, lastReached);
-        }
+    if (totalRaised < nextThreshold) {
+        return;
     }
+
+    double newLastReached = Math.floor(totalRaised / interval) * interval;
+
+    broadcast(server, "§6Repeatable goal of §e$" + format(newLastReached) + " §6reached! Executing Action: §a" + goal.getTitle());
+    runAction(server, goal.getAction());
+    PixelballConfig.setRepeatGoalLastReached(interval, newLastReached);
+}
+
 
     public void runAction(MinecraftServer server, String action) {
         if (action == null || action.isBlank()) return;
