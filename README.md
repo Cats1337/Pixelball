@@ -74,7 +74,3 @@ The built jar will be in:
 ```txt
 build/libs/
 ```
-
-## License
-
-All rights reserved.
